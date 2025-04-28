@@ -26,7 +26,7 @@ all_students.append(Student({'id': 1, 'name': 'Harry'}))
 all_students.append(Student({'id': 2, 'name': 'Hermione'}))
 all_students.append(Student({'id': 2, 'name': 'Ron'}))
 all_students.append(Student({'id': 3, 'name': 'Bob'}))
-l_students.append(Student({'id': 3, 'name': 'Bob'}))
+all_students.append(Student({'id': 3, 'name': 'Bob'}))
 
 @app.route('/', methods=['GET'])
 def base_route():
