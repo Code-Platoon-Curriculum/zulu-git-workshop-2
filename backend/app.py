@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 import os
 from dotenv import load_dotenv
+from .student import Student, all_students
 # import for tiny thing 1
 # tiny thing 2 related to tiny thing 1
 
@@ -14,19 +15,6 @@ print(os.environ['MY_SECRET_API_KEY'])
 app = Flask(__name__)
 CORS(app)
 
-class Student:
-    """student"""
-    def __init__(self, data):
-        self.id = data.get('id')
-        self.name = data.get('name')
-
-all_students = []
-# Add some students
-all_students.append(Student({'id': 1, 'name': 'Harry'}))
-all_students.append(Student({'id': 2, 'name': 'Hermione'}))
-all_students.append(Student({'id': 2, 'name': 'Ron'}))
-all_students.append(Student({'id': 3, 'name': 'Bob'}))
-all_students.append(Student({'id': 3, 'name': 'Bob'}))
 
 @app.route('/', methods=['GET'])
 def base_route():
