@@ -20,13 +20,13 @@ class Student:
         self.id = data.get('id')
         self.name = data.get('name')
 
-all_students = []
+every_student = []
 # Add some students
-all_students.append(Student({'id': 1, 'name': 'Harry'}))
-all_students.append(Student({'id': 2, 'name': 'Hermione'}))
-all_students.append(Student({'id': 2, 'name': 'Ron'}))
-all_students.append(Student({'id': 3, 'name': 'Bob'}))
-all_students.append(Student({'id': 3, 'name': 'Bob'}))
+every_student.append(Student({'id': 1, 'name': 'Jon Snow'}))
+every_student.append(Student({'id': 2, 'name': 'Daenerys'}))
+every_student.append(Student({'id': 2, 'name': 'Mr. White Walker'}))
+every_student.append(Student({'id': 3, 'name': 'The Hound'}))
+every_student.append(Student({'id': 3, 'name': 'Sage'}))
 
 @app.route('/', methods=['GET'])
 def base_route():
@@ -38,9 +38,15 @@ def get_students():
     """get all students"""
     student_list = [
         {'id': student.id, 'name': student.name}
-        for student in all_students
+        for student in every_student
     ]
     return jsonify(student_list)
+
+@app.route('/goodbye', methods=['GET'])
+def say_goodbye(id):
+    student = next((s for s in every_student if s['id'] == id), None)
+    return f"Goodbye, {student.name}!"
+
 
 IS_DEBUG_ENABLED = False
 if os.environ['FLASK_ENV'] == "dev":
