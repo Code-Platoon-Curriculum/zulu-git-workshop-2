@@ -4,10 +4,10 @@ class Student:
         self.id = data.get('id')
         self.name = data.get('name')
 
-all_students = [
-    Student({'id': 1, 'name': 'Harry'}),
-    Student({'id': 2, 'name': 'Hermione'}),
-    Student({'id': 2, 'name': 'Ron'}),
-    Student({'id': 3, 'name': 'Bob'}),
-    Student({'id': 3, 'name': 'Bob'}),
-]
+every_student = []
+# Add some students
+every_student.append(Student({'id': 1, 'name': 'Jon Snow'}))
+every_student.append(Student({'id': 2, 'name': 'Daenerys'}))
+every_student.append(Student({'id': 2, 'name': 'Mr. White Walker'}))
+every_student.append(Student({'id': 3, 'name': 'The Hound'}))
+every_student.append(Student({'id': 3, 'name': 'Sage'}))
