@@ -1,4 +1,4 @@
-# yankee-git-workshop
+# Zulu Git Workshop!!!
 
 Adding a change for our foo commit
 
