@@ -30,7 +30,7 @@ all_students.append(Student({'id': 3, 'name': 'Bob'}))
 
 @app.route('/', methods=['GET'])
 def base_route():
-    return "ping"
+    return "pong"
 
 @app.route('/students', methods=['GET'])
 def get_students():
